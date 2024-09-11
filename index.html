@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="ad-container">
+        <!-- إضافة إعلان Google AdSense -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- زر تخطي الإعلان -->
+    <button id="skip-button">تخطي الإعلان</button>
+
+    <script>
+        // إظهار زر "تخطي الإعلان" بعد 5 ثوانٍ
+        setTimeout(() => {
+            document.getElementById('skip-button').style.display = 'block';
+        }, 5000); // 5000 ميلي ثانية = 5 ثوانٍ
+
+        // إعادة توجيه المستخدم إلى الرابط الأصلي بعد الضغط على زر "تخطي الإعلان"
+        document.getElementById('skip-button').addEventListener('click', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect');
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            }
+        });
+    </script>
+
+</body>
+</html>
